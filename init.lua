@@ -1,1 +1,3 @@
-require "user.options" 
+require "user.core.options"
+require "user.core.colorscheme"
+
