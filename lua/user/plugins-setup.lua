@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
   use {
   "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -49,7 +49,6 @@ return require('packer').startup(function(use)
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
- 
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -76,7 +75,53 @@ return require('packer').startup(function(use)
   use("jose-elias-alvarez/typescript.nvim") -- additional functionality for typescript server (e.g. rename file & update imports)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
+  -- formatting & linting
+  use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+  use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
+
+  -- treesitter configuration
+  use({
+	"nvim-treesitter/nvim-treesitter",
+	run = function()
+		require("nvim-treesitter.install").update({ with_sync = true })
+	end,
+  })
+  use 'nvim-orgmode/orgmode'
+
+  -- auto closing
+  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
+  -- git integration
+  use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+  -- Preview Markdown
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- Note taking
+  use 'renerocksai/telekasten.nvim'
+  use 'renerocksai/calendar-vim'
+
+
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+  require("toggleterm").setup()
+end}
+
+  -- Transparent background
+  use 'xiyaowong/nvim-transparent'
+
+
+  -- aerial - show functions and variables on the side
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -22,3 +22,9 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>") -- find string in current
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+
+
+-- Aerial 
+map("n", "<leader>lS", "<cmd>AerialToggle<cr>")
+
+ 
