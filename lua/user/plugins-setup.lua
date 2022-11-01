@@ -81,12 +81,11 @@ return require('packer').startup(function(use)
 
 
   -- treesitter configuration
-  use({
-	"nvim-treesitter/nvim-treesitter",
-	run = function()
-		require("nvim-treesitter.install").update({ with_sync = true })
-	end,
-  })
+  use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
   use 'nvim-orgmode/orgmode'
 
   -- auto closing
@@ -122,6 +121,9 @@ end}
     'stevearc/aerial.nvim',
     config = function() require('aerial').setup() end
   }
+
+  -- Bufferline - aka code tabs
+  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

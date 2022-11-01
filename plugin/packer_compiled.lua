@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/aerial.nvim",
     url = "https://github.com/stevearc/aerial.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["calendar-vim"] = {
     loaded = true,
     path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/calendar-vim",
