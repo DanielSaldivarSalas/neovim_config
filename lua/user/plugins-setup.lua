@@ -52,7 +52,6 @@ return require('packer').startup(function(use)
   -- BUfferline
   
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
-  --[[
 
   -- neo-tree
   use {
@@ -60,11 +59,11 @@ return require('packer').startup(function(use)
     branch = "v2.x",
     requires = {
       "nvim-lua/plenary.nvim",
-      "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     }
   }
 
+  --[[
   -- statusline
   use("nvim-lualine/lualine.nvim")
 

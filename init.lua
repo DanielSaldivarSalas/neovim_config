@@ -8,7 +8,7 @@ require "user.core.mappings"
 require "config.mini.init"
 
 require "user.plugins.bufferline"
-
+require "user.plugins.neo-tree"
 
 --[[
 require "user.plugins.lualine"
