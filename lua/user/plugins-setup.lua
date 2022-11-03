@@ -63,11 +63,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- aerial - show functions and variables on the side
-  use {
-    'stevearc/aerial.nvim',
-    config = function() require('aerial').setup() end
-  }
 
 
 
@@ -95,14 +90,14 @@ return require('packer').startup(function(use)
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
---[[
+
   -- treesitter configuration
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-  
-    ]]use 'nvim-orgmode/orgmode'
+
+  use 'nvim-orgmode/orgmode'
 
   -- status line
   if vim.fn.has('unix') == 1 then
@@ -126,6 +121,12 @@ return require('packer').startup(function(use)
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+
+  -- aerial - show functions and variables on the side
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
 
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   require("toggleterm").setup()
