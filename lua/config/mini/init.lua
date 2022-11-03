@@ -18,5 +18,5 @@ require("mini.pairs").setup({})
 
 require('mini.fuzzy').setup()
 
-require('mini.tabline').setup()
+--require('mini.tabline').setup()
 

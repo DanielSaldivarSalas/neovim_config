@@ -7,7 +7,7 @@ require "user.core.mappings"
 
 require "config.mini.init"
 
-
+require "user.plugins.bufferline"
 
 
 --[[
