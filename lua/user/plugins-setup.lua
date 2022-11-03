@@ -27,14 +27,23 @@ return require('packer').startup(function(use)
   -- My plugins here
 
   -- lua functions that many plugins use
-  use 'nvim-lua/plenary.nvim'
+    use 'nvim-lua/plenary.nvim' 
 
+  
+  -- Mini.nvim configuration
+  use 'echasnovski/mini.nvim'
 
   -- TODO determine if i want to use this colorscheme
   use 'bluz71/vim-nightfly-guicolors'
+  
 
-  -- vs-code like icons
-  --use("kyazdani42/nvim-web-devicons")
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  --[[
 
   -- neo-tree
   use {
@@ -79,18 +88,12 @@ return require('packer').startup(function(use)
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
-
   -- treesitter configuration
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-
   use 'nvim-orgmode/orgmode'
-
-  -- auto closing
-  use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-  use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
@@ -103,17 +106,11 @@ return require('packer').startup(function(use)
 
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-  -- Note taking
-  use 'renerocksai/telekasten.nvim'
-  use 'renerocksai/calendar-vim'
-
 
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
   require("toggleterm").setup()
 end}
 
-  -- Transparent background
-  use 'xiyaowong/nvim-transparent'
 
 
   -- aerial - show functions and variables on the side
@@ -124,6 +121,7 @@ end}
 
   -- Bufferline - aka code tabs
   use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
+]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
