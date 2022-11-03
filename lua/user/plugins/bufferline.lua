@@ -3,7 +3,13 @@ if not status_ok then
   return
 end
 vim.opt.termguicolors = true
-require("bufferline").setup{}
+require("bufferline").setup{
+    if vim.fn.has('unix') == 1 then
+        options = {
+        close_icon = "x"
+        }
+    end
+}
 --[[bufferline.setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
