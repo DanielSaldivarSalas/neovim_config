@@ -3,7 +3,8 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
---[[require'nvim-treesitter.configs'.setup {
+--[[
+require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust" },
 
@@ -44,9 +45,9 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
-}]]
+}
 -- Load custom tree-sitter grammar for org filetype
---[[require('orgmode').setup_ts_grammar()
+require('orgmode').setup_ts_grammar()
 
 -- import nvim-treesitter plugin safely
 local status, treesitter = pcall(require, "nvim-treesitter.configs")

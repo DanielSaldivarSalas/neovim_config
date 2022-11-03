@@ -21,3 +21,4 @@ require "user.plugins.toggleterm"
 require "user.plugins.telescope"
 
 require "user.plugins.lualine"
+require "user.plugins.aerial"
