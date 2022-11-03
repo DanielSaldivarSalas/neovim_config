@@ -20,3 +20,6 @@ require('mini.fuzzy').setup()
 
 --require('mini.tabline').setup()
 
+
+-- started page
+require('mini.starter').setup()
