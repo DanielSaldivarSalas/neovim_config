@@ -26,3 +26,5 @@ require('mini.starter').setup()
 
 -- status line
 require('mini.statusline').setup()
+
+require('mini.trailspace').setup()
