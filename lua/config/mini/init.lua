@@ -23,3 +23,6 @@ require('mini.fuzzy').setup()
 
 -- started page
 require('mini.starter').setup()
+
+-- status line
+require('mini.statusline').setup()
