@@ -43,6 +43,9 @@ return require('packer').startup(function(use)
   -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  
+  use 'nvim-tree/nvim-web-devicons'
+
   --[[
 
   -- neo-tree
@@ -119,8 +122,6 @@ end}
     config = function() require('aerial').setup() end
   }
 
-  -- Bufferline - aka code tabs
-  use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'kyazdani42/nvim-web-devicons'}
 ]]
 
   -- Automatically set up your configuration after cloning packer.nvim

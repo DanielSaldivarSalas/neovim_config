@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/mini.nvim",
     url = "https://github.com/echasnovski/mini.nvim"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/danielsaldivar/.local/share/nvim/site/pack/packer/start/packer.nvim",
