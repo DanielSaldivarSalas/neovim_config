@@ -48,6 +48,10 @@ return require('packer').startup(function(use)
    
       use 'nvim-tree/nvim-web-devicons'
   end 
+
+  -- BUfferline
+  
+  use {'akinsho/bufferline.nvim', tag = "v3.*"}
   --[[
 
   -- neo-tree
