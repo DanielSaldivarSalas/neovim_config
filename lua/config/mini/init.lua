@@ -15,7 +15,6 @@ require("mini.comment").setup({})
 -- autoclose curly braces and things
 require("mini.pairs").setup({})
 
-
 require('mini.fuzzy').setup()
 
 --require('mini.tabline').setup()
@@ -24,7 +23,5 @@ require('mini.fuzzy').setup()
 -- started page
 require('mini.starter').setup()
 
--- status line
-require('mini.statusline').setup()
 
 require('mini.trailspace').setup()

@@ -21,8 +21,6 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help ta
 
 -- Neotree
 map("n", "<leader>op", "<cmd>Neotree toggle<cr>") -- Toggle Explorer
---[[
--- Aerial 
+-- Aerial
 map("n", "<leader>lS", "<cmd>AerialToggle<cr>")
- 
-]]
+

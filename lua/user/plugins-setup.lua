@@ -27,15 +27,15 @@ return require('packer').startup(function(use)
   -- My plugins here
 
   -- lua functions that many plugins use
-    use 'nvim-lua/plenary.nvim' 
+    use 'nvim-lua/plenary.nvim'
 
-  
+
   -- Mini.nvim configuration
   use 'echasnovski/mini.nvim'
 
   -- TODO determine if i want to use this colorscheme
   use 'bluz71/vim-nightfly-guicolors'
-  
+
 
   -- Telescope
   use {
@@ -43,14 +43,14 @@ return require('packer').startup(function(use)
   -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
- 
+
   if vim.fn.has('unix') == 1 then
-   
+
       use 'nvim-tree/nvim-web-devicons'
-  end 
+  end
 
   -- BUfferline
-  
+
   use {'akinsho/bufferline.nvim', tag = "v3.*"}
 
   -- neo-tree
@@ -63,13 +63,13 @@ return require('packer').startup(function(use)
     }
   }
 
-  --[[
-  -- statusline
-  use("nvim-lualine/lualine.nvim")
+  -- aerial - show functions and variables on the side
+  use {
+    'stevearc/aerial.nvim',
+    config = function() require('aerial').setup() end
+  }
 
-  -- fuzzy finding w/ telescope
-  --use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-  use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -95,13 +95,25 @@ return require('packer').startup(function(use)
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
   use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
-
+--[[
   -- treesitter configuration
   use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-  use 'nvim-orgmode/orgmode'
+  
+    ]]use 'nvim-orgmode/orgmode'
+
+  -- status line
+  if vim.fn.has('unix') == 1 then
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  else
+      use 'nvim-lualine/lualine.nvim'
+  end
+
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
@@ -121,13 +133,7 @@ end}
 
 
 
-  -- aerial - show functions and variables on the side
-  use {
-    'stevearc/aerial.nvim',
-    config = function() require('aerial').setup() end
-  }
 
-]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
