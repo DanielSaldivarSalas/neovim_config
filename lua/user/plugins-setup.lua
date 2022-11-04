@@ -134,6 +134,8 @@ end}
 
 
 
+  -- add lazygit
+  use 'kdheepak/lazygit.nvim'
 
 
   -- Automatically set up your configuration after cloning packer.nvim

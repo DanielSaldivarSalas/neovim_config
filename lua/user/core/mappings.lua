@@ -24,3 +24,7 @@ map("n", "<leader>op", "<cmd>Neotree toggle<cr>") -- Toggle Explorer
 -- Aerial
 map("n", "<leader>lS", "<cmd>AerialToggle<cr>")
 
+
+
+--setup mapping to call :LazyGit
+map("n", "<leader>gg", "<cmd>LazyGit<cr>")
